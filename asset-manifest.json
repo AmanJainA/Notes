@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Notes/static/css/main.e97ed437.css",
-    "main.js": "/Notes/static/js/main.6cb90d63.js",
+    "main.js": "/Notes/static/js/main.44687085.js",
     "static/media/Self.png": "/Notes/static/media/Self.786d90b5e0b267aa55e2.png",
     "static/media/vision-mission.jpeg": "/Notes/static/media/vision-mission.d9bf7dc75e748b1b0427.jpeg",
     "index.html": "/Notes/index.html",
     "main.e97ed437.css.map": "/Notes/static/css/main.e97ed437.css.map",
-    "main.6cb90d63.js.map": "/Notes/static/js/main.6cb90d63.js.map"
+    "main.44687085.js.map": "/Notes/static/js/main.44687085.js.map"
   },
   "entrypoints": [
     "static/css/main.e97ed437.css",
-    "static/js/main.6cb90d63.js"
+    "static/js/main.44687085.js"
   ]
 }
