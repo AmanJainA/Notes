@@ -1,0 +1,511 @@
+/* =========================================================
+   CodeCampus theme
+   Distilled from the original "Notes" project's Main.css /
+   Sidebar-themes.css / Login.css / App.css so the new,
+   database-driven app keeps the exact same look & feel:
+   - light, off-canvas icon sidebar (left) that slides in
+   - right-hand "Aside" topic list on lesson pages
+   - dark top navbar with brand + mobile menu on the dashboard
+   - card-style code blocks
+   - red/white split login & signup panel
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --brand-blue: #007afc;
+  --brand-blue-light: #00a9fd;
+  --sidebar-bg: #f9f9f9;
+  --sidebar-text: #444;
+  --navbar-bg: #1f2937;
+  --accent-red: rgba(236, 48, 20, 0.92);
+}
+
+body {
+  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff;
+}
+
+/* =========================================================
+   Off-canvas icon Sidebar (lesson pages)
+   ========================================================= */
+
+.page-wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-wrapper .page-content {
+  display: inline-block;
+  width: 100%;
+  transition: padding-left 0.3s ease;
+  overflow-x: hidden;
+}
+
+.page-wrapper.toggled .sidebar-wrapper {
+  left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .page-wrapper.toggled .page-content {
+    padding-left: 280px;
+  }
+  .page-wrapper.toggled.pinned .page-content {
+    padding-left: 80px;
+  }
+}
+
+.sidebar-wrapper {
+  width: 280px;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  left: -280px;
+  z-index: 1045;
+  background-color: var(--sidebar-bg);
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.sidebar-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-wrapper a {
+  text-decoration: none;
+  color: var(--sidebar-text);
+  transition: color 0.3s ease;
+}
+
+.sidebar-wrapper .sidebar-content {
+  height: calc(100% - 55px);
+  overflow-y: auto;
+}
+
+.sidebar-wrapper .sidebar-brand {
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 55px;
+  background-color: var(--brand-blue);
+  color: #fff;
+  font-weight: bold;
+}
+
+.sidebar-wrapper .sidebar-brand a {
+  color: #fff;
+}
+
+.sidebar-wrapper .sidebar-menu {
+  padding-bottom: 10px;
+}
+
+.sidebar-wrapper .sidebar-menu .header-menu span {
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 15px 20px 5px 20px;
+  display: inline-block;
+  color: #6c7b88;
+}
+
+.sidebar-wrapper .sidebar-menu button.sidebar-lang-toggle {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 2px auto;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.sidebar-wrapper .sidebar-menu button.sidebar-lang-toggle:hover,
+.sidebar-wrapper .sidebar-menu button.sidebar-lang-toggle.active {
+  background: #fff;
+  box-shadow: 0 3px 15px rgba(36, 37, 38, 0.08);
+}
+
+.sidebar-wrapper .sidebar-menu .menu-icon {
+  margin-right: 10px;
+  font-size: 14px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: var(--sidebar-bg);
+  flex-shrink: 0;
+}
+
+.sidebar-wrapper .sidebar-menu button.sidebar-lang-toggle:hover .menu-icon,
+.sidebar-wrapper .sidebar-menu button.sidebar-lang-toggle.active .menu-icon {
+  color: var(--brand-blue-light);
+}
+
+.sidebar-wrapper .sidebar-menu .menu-text {
+  flex-grow: 1;
+}
+
+.sidebar-wrapper .sidebar-submenu {
+  padding: 4px 0 4px 40px;
+}
+
+.sidebar-wrapper .sidebar-submenu a {
+  display: block;
+  padding: 6px 8px;
+  font-size: 13.5px;
+  border-radius: 4px;
+}
+
+.sidebar-wrapper .sidebar-submenu a:before {
+  content: "\f111";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-size: 7px;
+  margin-right: 8px;
+}
+
+.sidebar-wrapper .sidebar-submenu a:hover,
+.sidebar-wrapper .sidebar-submenu a.active {
+  background: #fff;
+  color: var(--brand-blue-light);
+  box-shadow: 0 3px 15px rgba(36, 37, 38, 0.08);
+}
+
+/* =========================================================
+   Right-hand Aside (topic list on lesson pages)
+   ========================================================= */
+
+.aside-nav .nav-link {
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.aside-nav .nav-link:hover {
+  background: #f4f6f8;
+}
+
+.aside-nav .nav-link.active {
+  color: #212529 !important;
+  font-weight: 700;
+  background: #eef4ff;
+}
+
+@media (min-width: 768px) {
+  .aside-wrapper {
+    display: none !important;
+  }
+}
+
+.aside-wrapper {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+}
+
+.aside-wrapper.show {
+  right: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1040;
+}
+
+/* =========================================================
+   Code blocks
+   ========================================================= */
+
+.code-block {
+  margin: 20px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.code-block figcaption {
+  background: #343a40;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 1px solid #2c3136;
+}
+
+.code-block pre {
+  margin: 0;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #212529;
+  background: #f8f9fa;
+  white-space: pre-wrap;
+}
+
+/* =========================================================
+   Dark ".Main" shell (Dashboard / About / Contact pages)
+   Matches the original project's dark theme: black background,
+   light grey body copy, white headings, teal-accented links.
+   ========================================================= */
+
+.Main {
+  background: #000;
+  color: #999;
+  min-height: 100vh;
+}
+
+.Main h1,
+.Main h2,
+.Main h3,
+.Main h4,
+.Main h5 {
+  color: #fff;
+}
+
+.Main a.text-accent,
+.Main .text-accent {
+  color: #20c997;
+}
+
+.site-section {
+  padding: 2.5em 0;
+}
+
+.site-section-heading {
+  color: #fff;
+  position: relative;
+  font-size: 2.25rem;
+}
+
+.site-section-heading.text-center {
+  display: inline-block;
+  padding-bottom: 14px;
+}
+
+.site-section-heading.text-center:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #20c997;
+}
+
+.Main .form-control {
+  height: 43px;
+  border-radius: 0;
+  background: transparent;
+  border-color: #555;
+  color: #fff !important;
+}
+
+.Main .form-control::placeholder {
+  color: #888;
+}
+
+.Main .form-control:focus {
+  border-color: #20c997;
+  background: transparent;
+  box-shadow: none;
+}
+
+.Main textarea.form-control {
+  height: auto;
+}
+
+/* =========================================================
+   Top navbar (dashboard-style pages)
+   ========================================================= */
+
+.site-navbar {
+  background-color: var(--navbar-bg);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 9;
+}
+
+.site-navbar .site-menu {
+  margin-bottom: 0;
+}
+
+.site-navbar .site-menu li a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-navbar .site-menu li a:hover,
+.site-navbar .site-menu li.active a {
+  color: #fff;
+}
+
+.mobile-menu {
+  background-color: var(--navbar-bg);
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.footer {
+  color: #6c757d;
+  border-top: 1px solid #eee;
+}
+
+/* =========================================================
+   Dashboard language cards
+   ========================================================= */
+
+.image-wrap-2 {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, #001a33 100%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-wrap-2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.image-wrap-2 .lang-icon {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  font-size: 2.2rem;
+  opacity: 0.85;
+}
+
+.image-wrap-2 .image-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+  text-align: left;
+}
+
+.image-wrap-2 .image-info h2 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.btn-outline-white {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-outline-white:hover {
+  background: #fff;
+  color: #212529;
+}
+
+/* =========================================================
+   Auth (login / signup) split panel
+   ========================================================= */
+
+.auth-screen {
+  min-height: 100vh;
+  background-image: linear-gradient(
+      rgba(10, 10, 20, 0.35),
+      rgba(10, 10, 20, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1600&q=60");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-panel {
+  width: 100%;
+  max-width: 900px;
+  min-height: 480px;
+  background-color: var(--accent-red);
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.auth-info-box {
+  flex: 1;
+  padding: 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-info-box .tabs a {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.auth-info-box .tabs a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.auth-white-panel {
+  flex: 1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 40px;
+  color: #242424;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .auth-panel {
+    flex-direction: column;
+  }
+  .auth-info-box {
+    text-align: center;
+    padding: 30px 20px 10px;
+  }
+  .auth-white-panel {
+    margin: 10px;
+  }
+}
