@@ -67,15 +67,23 @@ export default function Contact() {
   return (
     <div className="site-section" data-aos="fade">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-md-7" data-aos="fade-up">
-            <div className="row mb-5">
-              <div className="col-12">
-                <h2 className="site-section-heading text-center d-block mx-auto">
-                  Contact
-                </h2>
-              </div>
+        <div className="row align-items-center mb-5">
+          <div className="col-lg-7" data-aos="fade-right">
+            <h2 className="site-section-heading d-block">Contact</h2>
+            <p>Have a question about a lesson, found something that needs fixing, or want to share feedback? Send a message and we will get back to you.</p>
+            <div className="d-flex flex-wrap" style={{ gap: "10px" }}>
+              <a className="btn btn-success py-2 px-4" href="mailto:amanjain033@gmail.com">Email Us</a>
+              <a className="btn btn-outline-light py-2 px-4" href="tel:+918290367908">Call Us</a>
             </div>
+          </div>
+          <div className="col-lg-5 mt-4 mt-lg-0" data-aos="fade-left">
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+              alt="People collaborating and sharing ideas"
+              className="img-fluid rounded"
+              style={{ width: "100%", maxHeight: "260px", objectFit: "cover", borderRadius: "16px" }}
+              loading="lazy"
+            />
           </div>
         </div>
 
@@ -209,6 +217,47 @@ export default function Contact() {
               <p className="mb-0 font-weight-bold text-white">Response time</p>
               <p className="mb-0">We usually reply within 1–2 business days.</p>
             </div>
+          </div>
+        </div>
+
+        <div className="row mt-5 align-items-stretch">
+          <div className="col-lg-5 mb-4" data-aos="fade-right">
+            <div className="p-4 h-100" style={{ background: "rgba(255,255,255,.045)", border: "1px solid rgba(255,255,255,.12)", borderRadius: "16px" }}>
+              <h3 className="text-white mb-4">Contact Information</h3>
+              <div className="d-flex mb-4" style={{ gap: "14px" }}>
+                <span className="text-success"><i className="fa fa-map-marker" aria-hidden="true" /></span>
+                <div><p className="mb-1 font-weight-bold text-white">Address</p><p className="mb-0">Parasnath Colony, Baral Road, Bijainagar, Ajmer, Rajasthan</p></div>
+              </div>
+              <div className="d-flex mb-4" style={{ gap: "14px" }}>
+                <span className="text-success"><i className="fa fa-phone" aria-hidden="true" /></span>
+                <div><p className="mb-1 font-weight-bold text-white">Phone</p><a href="tel:+918290367908" style={{ color: "#20c997" }}>+91 8290367908</a></div>
+              </div>
+              <div className="d-flex mb-4" style={{ gap: "14px" }}>
+                <span className="text-success"><i className="fa fa-envelope" aria-hidden="true" /></span>
+                <div><p className="mb-1 font-weight-bold text-white">Email</p><a href="mailto:amanjain033@gmail.com" style={{ color: "#20c997", overflowWrap: "anywhere" }}>amanjain033@gmail.com</a></div>
+              </div>
+              <div className="d-flex" style={{ gap: "14px" }}>
+                <span className="text-success"><i className="fa fa-clock-o" aria-hidden="true" /></span>
+                <div><p className="mb-1 font-weight-bold text-white">Response time</p><p className="mb-0">We usually reply within 1–2 business days.</p></div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-7" data-aos="fade-left">
+            <h3 className="text-white mb-3">Find Us on the Map</h3>
+            <p>Open the map to get directions to Bijainagar, Ajmer.</p>
+            <div style={{ borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,.15)" }}>
+              <iframe
+                title="Map to Bijainagar, Ajmer"
+                src="https://www.google.com/maps?q=Parasnath%20Colony%2C%20Baral%20Road%2C%20Bijainagar%2C%20Ajmer%2C%20Rajasthan&output=embed"
+                width="100%"
+                height="360"
+                style={{ border: 0, display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <a className="btn btn-outline-light py-2 px-4 mt-3" href="https://www.google.com/maps/search/?api=1&query=Parasnath%20Colony%2C%20Baral%20Road%2C%20Bijainagar%2C%20Ajmer%2C%20Rajasthan" target="_blank" rel="noreferrer">Get Directions ↗</a>
           </div>
         </div>
       </div>
