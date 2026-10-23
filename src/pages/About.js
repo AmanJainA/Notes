@@ -1,6 +1,5 @@
 import React from "react";
 import VM from '../img/About/vision-mission.jpeg';
-import Own from '../img/Build/Self.png';
 // Same structure as the original project's About.js (site-section /
 // site-section-heading / vision & mission / team block) - runs inside
 // DashboardLayout so it gets the same dark .Main shell, Header and
@@ -62,7 +61,7 @@ export default function About() {
             <div className="col-md-6 col-lg-6 col-xl-4"></div>
             <div className="col-md-6 col-lg-6 col-xl-4">
               <h2 className="mb-4">Built By</h2>
-              <img src={Own} alt="Profile" className="img-fluid w-50 rounded-circle mb-4" />
+              <img src="https://github.com/AmanJainA.png" alt="Aman Jain profile" className="img-fluid rounded-circle mb-4" style={{ width: "180px", height: "180px", objectFit: "cover", border: "4px solid #20c997", boxShadow: "0 12px 36px rgba(0,0,0,.35)" }} />
               <h4 className="font-weight-light mb-1"><strong>Founder & Lead Developer:</strong> Aman Jain</h4>
               <p><strong>Email:</strong> <a href="mailto:amanjain033@gmail.com">amanjain033@gmail.com</a></p>
               <p className="mb-0">
@@ -71,6 +70,48 @@ export default function About() {
               </p>
             </div>
             <div className="col-md-6 col-lg-6 col-xl-4"></div>
+          </div>
+        </div>
+
+        <div className="row mt-5 align-items-center">
+          <div className="col-lg-5 mb-4" data-aos="fade-right">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+              alt="Students learning and working with technology"
+              className="img-fluid rounded"
+              style={{ width: "100%", maxHeight: "320px", objectFit: "cover", borderRadius: "16px" }}
+              loading="lazy"
+            />
+          </div>
+          <div className="col-lg-7" data-aos="fade-left">
+            <h3 className="text-white">Learn, build and grow</h3>
+            <p>Notes brings language-wise lessons, practical examples and learning progress into one place. Use the Learn section to explore available languages, open lessons and track your completed topics.</p>
+            <div className="d-flex flex-wrap" style={{ gap: "10px" }}>
+              <a className="btn btn-success py-2 px-4" href="/Notes/dashboard">Explore Notes</a>
+              <a className="btn btn-outline-light py-2 px-4" href="mailto:amanjain033@gmail.com">Email the team</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="row mt-5">
+          <div className="col-12">
+            <h3 className="text-white text-center mb-3">Find Us</h3>
+            <p className="text-center">Parasnath Colony, Baral Road, Bijainagar, Ajmer, Rajasthan</p>
+            <div style={{ borderRadius: "16px", overflow: "hidden", border: "1px solid rgba(255,255,255,.15)" }}>
+              <iframe
+                title="Map to Bijainagar, Ajmer"
+                src="https://www.google.com/maps?q=Parasnath%20Colony%2C%20Baral%20Road%2C%20Bijainagar%2C%20Ajmer%2C%20Rajasthan&output=embed"
+                width="100%"
+                height="320"
+                style={{ border: 0, display: "block" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+            <p className="text-center mt-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=Parasnath%20Colony%2C%20Baral%20Road%2C%20Bijainagar%2C%20Ajmer%2C%20Rajasthan" target="_blank" rel="noreferrer">Open location in Google Maps ↗</a>
+            </p>
           </div>
         </div>
       </div>
