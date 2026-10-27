@@ -49,32 +49,6 @@ The curriculum currently includes content areas for **C, C++, Java, PHP, HTML, C
 
 - **Live website:** https://amanjaina.github.io/Notes/
 
-## 🚀 Run Locally
-
-### Requirements
-
-- Node.js and npm
-- A Supabase project with the Notes schema configured
-
-### Setup
-
-```bash
-git clone https://github.com/AmanJainA/Notes.git
-cd Notes
-cp .env.example .env
-```
-
-Add your Supabase project URL and anon key to `.env` using the variable names shown in `.env.example`, then run:
-
-```bash
-npm install
-npm start
-```
-
-Open http://localhost:3000 in your browser.
-
-For the database setup and sample curriculum, use the SQL files in the `supabase/` directory. Make sure the `notes` schema is exposed through the Supabase Data API and that the project's authentication and Row Level Security settings are configured correctly.
-
 ## 📚 Curriculum Content
 
 The application reads curriculum data from Supabase. The main content tables are used to organize:
