@@ -45,10 +45,9 @@ The curriculum currently includes content areas for **C, C++, Java, PHP, HTML, C
 - **Deployment:** GitHub Pages
 - **Version control:** Git and GitHub
 
-## 🌐 Project Links
+## 🌐 Visit Notes
 
-- **Live application:** https://amanjaina.github.io/Notes/
-- **Source code:** https://github.com/AmanJainA/Notes
+- **Live website:** https://amanjaina.github.io/Notes/
 
 ## 🚀 Run Locally
 
